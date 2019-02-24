@@ -52,6 +52,19 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    [
+      'nuxt-mq',
+      {
+        // Default breakpoint for SSR
+        defaultBreakpoint: 'mobile',
+        breakpoints: {
+          mobile: 950,
+          tablet: 960,
+          laptop: 1250,
+          desktop: Infinity,
+        }
+      }
+    ],
   ],
   /*
   ** Axios module configuration
@@ -71,12 +84,12 @@ module.exports = {
         import: ["~assets/style/variables.styl"]
       }
     },
-    
+
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }
